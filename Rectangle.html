@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rectangle</title>
+</head>
+<body>
+<canvas id="canvas" width="480px" height="320px" style="border:1px solid #d3d3d3;"></canvas>
+<script>
+    class Rectangle {
+        constructor(x, y, width, height, color) {
+            this.x = x;
+            this.y = y;
+            this.width = width;
+            this.height = height;
+            this.color = color;
+        }
+        render() {
+            var cxt = document.getElementById("canvas").getContext("2d");
+            cxt.beginPath();
+            cxt.strokeStyle = this.color;
+            cxt.strokeRect(this.x, this.y, this.width, this.height);
+        }
+    }
+    var renderRectangle = new Rectangle(10, 10, 200, 100, "#000000");
+    renderRectangle.render();
+</script>
+</body>
+</html>
